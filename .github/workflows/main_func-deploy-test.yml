@@ -48,6 +48,5 @@ jobs:
         with:
           app-name: 'func-az-deploy-test'
           slot-name: 'Production'
-          package: '${{ env.PACKAGE_DIRECTORY }}'
-          respect-pom-xml: true
+          package: 'target/azure-functions/func-az-deploy-test'
           
