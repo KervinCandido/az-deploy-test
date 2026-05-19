@@ -2,6 +2,8 @@ package br.com.kervincandido;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
+import io.micrometer.core.annotation.Counted;
+import io.micrometer.core.annotation.Timed;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
@@ -21,6 +23,8 @@ public class GreetingResource {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
+    @Counted(value = "quantidade.chamadas", description = "Quantidade de chamadas ao endpoint /hello")
+    @Timed(value = "tempo.processamento", description = "Tempo de processamento do endpoint /hello", histogram = true)
     public String hello() {
         return "hello " + valorTeste + "\nprivate key: "
                 + jwtPrivateKey.substring(0, 30) + "...\npublic key: "

@@ -52,6 +52,19 @@
             <groupId>com.microsoft.azure.functions</groupId>
             <artifactId>azure-functions-java-library</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-opentelemetry</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-micrometer-opentelemetry</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkiverse.opentelemetry.exporter</groupId>
+            <artifactId>quarkus-opentelemetry-exporter-azure</artifactId>
+            <version>3.31.4.0</version>
+        </dependency>
     </dependencies>
 
     <build>
